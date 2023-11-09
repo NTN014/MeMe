@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">#EB13BC</item>
+        <item name="colorPrimaryVariant">#CB0DF3EB</item>
+        <item name="colorOnPrimary">#FFEB3B</item>
+    </style>
+</resources>
