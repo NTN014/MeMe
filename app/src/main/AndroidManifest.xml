@@ -13,10 +13,10 @@
         android:theme="@style/Theme.MeMe"
         tools:targetApi="34">
         <activity
-            android:name=".RegisterFragment"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginFragment"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

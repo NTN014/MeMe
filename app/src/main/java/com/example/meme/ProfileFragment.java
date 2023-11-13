@@ -36,11 +36,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void openLoginScreen() {
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, new LoginFragment());
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        Intent intent = new Intent(requireContext(), LoginActivity.class);
+        startActivity(intent);
     }
 
 }
