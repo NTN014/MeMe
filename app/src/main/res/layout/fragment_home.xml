@@ -19,7 +19,10 @@
             app:titleTextColor="@color/black"
             android:layout_width="match_parent"
             android:background="@color/pink"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp">
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <ViewFlipper
             android:id="@+id/homeViewFlipper"
