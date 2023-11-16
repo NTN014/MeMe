@@ -2,8 +2,8 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="colorPrimary">#EB13BC</item>
-        <item name="colorPrimaryVariant">#CB0DF3EB</item>
-        <item name="colorOnPrimary">#FFEB3B</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">#CBFFFFFF</item>
+        <item name="colorOnPrimary">#FF0000</item>
     </style>
 </resources>
