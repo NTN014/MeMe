@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/pink">
+    android:background="@drawable/curv_shape">
 
 
     <ImageView
@@ -16,24 +16,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:background="@color/pink">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/alert_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You received daily rewards"
             android:textSize="20sp"
             android:textColor="@color/black"/>
-
-        <Button
-            android:id="@+id/btn_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="OK"
-            android:background="@drawable/curv_shape"/>
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="OK"
+        android:background="@drawable/curv_shape"/>
 
 </LinearLayout>

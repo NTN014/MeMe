@@ -58,7 +58,7 @@ public class GiftFragment extends Fragment {
             point += 100;
             updatePoint();
             CustomAlertDialog ccd = new CustomAlertDialog();
-            ccd.showDialog(this.getActivity(), "You received daily rewards");
+            ccd.showDialog(this.getActivity(), "You received daily rewards!");
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(todayString, true);
             editor.apply();
