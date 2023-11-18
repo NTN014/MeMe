@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ProfileToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Profile"
+        app:titleTextColor="@color/black" />
+
+
+    <ImageView
+        android:id="@+id/ProfilePicture"
+        android:layout_width="220dp"
+        android:layout_height="200dp"
+        android:src="@drawable/defaultprofile"
+        app:layout_constraintBottom_toTopOf="@+id/LinearEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileToolbar"
+        app:layout_constraintVertical_bias="0.46" />
 
     <LinearLayout
         android:id="@+id/LinearEmail"
@@ -103,6 +126,7 @@
         android:layout_marginTop="284dp"
         android:layout_marginEnd="148dp"
         android:text="Login"
+        android:backgroundTint="@color/pink"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -111,11 +135,12 @@
         android:id="@+id/logoutButton"
         android:layout_width="115dp"
         android:layout_height="50dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="156dp"
+        android:layout_marginTop="496dp"
+        android:layout_marginEnd="148dp"
+        android:backgroundTint="@color/pink"
         android:text="Logout"
-        android:background="@color/black"
-        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

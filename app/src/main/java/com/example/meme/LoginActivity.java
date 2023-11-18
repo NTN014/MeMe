@@ -44,9 +44,38 @@ public class LoginActivity extends AppCompatActivity {
                 String phoneNumber = phone.getText().toString();
                 String name = Name.getText().toString();
                 String dateOfBirth = datebutton.getText().toString();
+                
+                if (!isValidEmail(email)) {
+                    // Show an error message indicating that the email is not valid
+                    Email.setError("Invalid email");
+                    return;
+                }
+
+                if (name.length() > 25) {
+                    // Show an error message indicating that the name is too long
+                    Name.setError("Name should not exceed 25 characters");
+                    return;
+                }
+
+                if (!isValidPhoneNumber(phoneNumber)) {
+                    // Show an error message indicating that the phone number is not valid
+                    phone.setError("Invalid phone number");
+                    return;
+                }
+                
                 sendUsernameToProfile(email, name, phoneNumber, dateOfBirth);
             }
         });
+    }
+
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        String regexStr = "^[0-9]{10}$";
+        return phoneNumber.matches(regexStr);
+    }
+
+    private boolean isValidEmail(String email) {
+        String regexPattern = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+        return email.matches(regexPattern);
     }
 
 

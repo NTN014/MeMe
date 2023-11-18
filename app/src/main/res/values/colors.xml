@@ -5,4 +5,6 @@
     <color name="pink">#FED3DD</color>
     <color name="blue">#323FBA</color>
     <color name="lightBlue">#ADD8E6</color>
+    <color name="red">#D60013</color>
+    <color name="gray">#B3ADAE</color>
 </resources>

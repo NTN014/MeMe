@@ -10,6 +10,17 @@
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin">
 
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="236dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wallet_logo_wibu" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="332dp"
@@ -110,7 +121,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
-        android:backgroundTint="@color/pink"
+        android:background="@color/pink"
         android:enabled="true"
         android:text="Sign in"
         android:textColor="@color/blue"
