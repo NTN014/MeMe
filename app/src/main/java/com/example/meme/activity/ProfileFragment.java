@@ -1,4 +1,4 @@
-    package com.example.meme;
+    package com.example.meme.activity;
 
     import android.content.Context;
     import android.content.Intent;
@@ -7,8 +7,6 @@
     import android.os.Bundle;
 
     import androidx.fragment.app.Fragment;
-    import androidx.fragment.app.FragmentManager;
-    import androidx.fragment.app.FragmentTransaction;
 
     import android.provider.MediaStore;
     import android.text.TextUtils;
@@ -20,6 +18,7 @@
     import android.widget.TextView;
 
     import com.bumptech.glide.Glide;
+    import com.example.meme.R;
 
     public class ProfileFragment extends Fragment {
         private static final String KEY_EMAIL = "email";

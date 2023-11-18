@@ -1,21 +1,16 @@
-    package com.example.meme;
-
-    import static com.google.android.material.internal.ContextUtils.getActivity;
+    package com.example.meme.activity;
 
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.fragment.app.Fragment;
     import androidx.fragment.app.FragmentManager;
     import androidx.fragment.app.FragmentTransaction;
 
-    import android.content.SharedPreferences;
     import android.os.Bundle;
     import android.view.MenuItem;
-    import android.widget.ViewFlipper;
 
+    import com.example.meme.R;
     import com.google.android.material.bottomnavigation.BottomNavigationView;
     import com.google.android.material.navigation.NavigationBarView;
-
-    import java.util.Calendar;
 
     public class MainActivity extends AppCompatActivity {
 

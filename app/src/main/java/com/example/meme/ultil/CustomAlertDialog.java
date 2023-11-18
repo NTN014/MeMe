@@ -1,4 +1,4 @@
-package com.example.meme;
+package com.example.meme.ultil;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+
+import com.example.meme.R;
 
 public class CustomAlertDialog {
 

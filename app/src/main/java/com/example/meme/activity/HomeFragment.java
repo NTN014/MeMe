@@ -1,4 +1,4 @@
-package com.example.meme;
+package com.example.meme.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.ViewFlipper;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.meme.R;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Handle the click event for shopping ImageView
-                Intent intent = new Intent(getActivity(), ShoppingActivity.class);
+                Intent intent = new Intent(getContext(), ShoppingActivity.class);
                 startActivity(intent);
             }
         });

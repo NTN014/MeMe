@@ -1,4 +1,4 @@
-package com.example.meme;
+package com.example.meme.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.meme.ultil.CustomAlertDialog;
+import com.example.meme.R;
 
 import java.util.Calendar;
 
