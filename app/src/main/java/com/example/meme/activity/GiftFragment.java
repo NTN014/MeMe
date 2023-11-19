@@ -1,5 +1,9 @@
 package com.example.meme.activity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -12,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.meme.DailyRewardService;
 import com.example.meme.ultil.CustomAlertDialog;
 import com.example.meme.R;
 
@@ -37,6 +42,8 @@ public class GiftFragment extends Fragment {
                 dailyReward();
             }
         });
+        // Schedule the daily reward alarm
+        scheduleDailyRewardAlarm();
 
 
         return view;
@@ -67,6 +74,21 @@ public class GiftFragment extends Fragment {
             editor.apply();
         }else {
             Toast.makeText(getActivity(), "You already signed in", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void scheduleDailyRewardAlarm() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+
+        Intent intent = new Intent(getActivity(), DailyRewardService.class);
+        PendingIntent pendingIntent = PendingIntent.getService(getActivity(), 0, intent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         }
     }
 }
