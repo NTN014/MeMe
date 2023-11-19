@@ -17,7 +17,7 @@
             android:exported="false"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${apiKey}" />
+            android:value="@string/map_api" />
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
