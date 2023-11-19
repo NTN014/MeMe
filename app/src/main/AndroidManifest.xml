@@ -12,12 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeMe"
         tools:targetApi="34">
-        <activity
-            android:name=".activity.MapsActivity"
-            android:exported="false"/>
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${apiKey}" />
+
+        <service
+            android:name=".DailyRewardService"
+            android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
@@ -38,5 +36,7 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 </manifest>
