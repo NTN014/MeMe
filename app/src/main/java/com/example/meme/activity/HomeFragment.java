@@ -27,11 +27,20 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         viewFlipper = view.findViewById(R.id.homeViewFlipper);
         ImageView shoppingImageView = view.findViewById(R.id.shopping);
+        ImageView mapImageView = view.findViewById(R.id.travel);
         shoppingImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Handle the click event for shopping ImageView
                 Intent intent = new Intent(getContext(), ShoppingActivity.class);
+                startActivity(intent);
+            }
+        });
+        mapImageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // Handle the click event for travel ImageView
+                Intent intent = new Intent(getContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });
