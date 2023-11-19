@@ -17,6 +17,12 @@
             android:name=".DailyRewardService"
             android:exported="false" />
         <activity
+            android:name=".activity.MapsActivity"
+            android:exported="false"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${apiKey}" />
+        <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
