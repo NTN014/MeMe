@@ -11,4 +11,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="map_api">AIzaSyBM7ewLHYymNzZkZ6qHAx_SMa4xCnPyZT8</string>
+    <string name="daily_tip_or_quote">Daily Tip or Quote</string>
 </resources>

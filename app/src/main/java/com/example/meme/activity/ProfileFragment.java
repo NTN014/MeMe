@@ -15,6 +15,7 @@
     import android.view.ViewGroup;
     import android.widget.Button;
     import android.widget.ImageView;
+    import android.widget.LinearLayout;
     import android.widget.TextView;
 
     import com.bumptech.glide.Glide;
@@ -176,12 +177,16 @@
 
                     Button logoutButton = getView().findViewById(R.id.logoutButton);
                     logoutButton.setVisibility(View.VISIBLE); // Show the logout button
+                    LinearLayout personLayout = getView().findViewById(R.id.person);
+                    personLayout.setVisibility(View.VISIBLE); // Show the person layout
                 } else {
                     Button loginButton = getView().findViewById(R.id.loginButton);
                     loginButton.setVisibility(View.VISIBLE); // Show the login button
 
                     Button logoutButton = getView().findViewById(R.id.logoutButton);
                     logoutButton.setVisibility(View.GONE); // Hide the logout button
+                    LinearLayout personLayout = getView().findViewById(R.id.person);
+                    personLayout.setVisibility(View.GONE); // Hide the person layout
                 }
             }
         }
