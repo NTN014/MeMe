@@ -5,18 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".activity.SettingFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnMoveToAddFood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Add Food to FoodShop"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/pink"/>
-    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Coming Soon"
+        android:textSize="50sp"
+        android:textColor="@color/black"/>
 
 </FrameLayout>

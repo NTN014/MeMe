@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ProfileFragment">
+    tools:context=".activity.ProfileFragment"
+    android:background="@drawable/bng3">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/ProfileToolbar"
@@ -23,7 +24,6 @@
         android:layout_width="220dp"
         android:layout_height="200dp"
         android:src="@drawable/defaultprofile"
-        app:layout_constraintBottom_toTopOf="@+id/LinearEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,125 +31,161 @@
         app:layout_constraintVertical_bias="0.46" />
 
     <LinearLayout
-        android:id="@+id/LinearEmail"
-        android:layout_width="match_parent"
+        android:layout_marginTop="245dp"
+        android:padding="15dp"
+        android:background="@drawable/linearoutline2"
+        android:backgroundTint="@color/white"
+        android:id="@+id/person"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/ProfileToolbar">
+
+
+        <LinearLayout
+            android:id="@+id/LinearEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/linearoutline"
+            android:gravity="start">
 
 
 
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/black"
-            android:textSize="25dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:id="@+id/LinearName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearEmail">
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"/>
 
 
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/black"
-            android:textSize="25dp"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:id="@+id/LinearPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearName">
+        <LinearLayout
+            android:id="@+id/LinearName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LinearEmail"
+            android:background="@drawable/linearoutline">
 
+            <TextView
 
-        <TextView
-            android:id="@+id/phoneNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            />
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"/>
 
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:id="@+id/LinearDOB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/LinearPhone">
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/LinearPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LinearName"
+            android:background="@drawable/linearoutline">
 
 
-        <TextView
-            android:id="@+id/dateofbirth"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            />
+            <TextView
+
+                android:id="@+id/phoneNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/LinearDOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/LinearPhone"
+            android:background="@drawable/linearoutline">
+
+            <TextView
+
+                android:id="@+id/dateofbirth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                />
+
+
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="115dp"
             android:layout_height="50dp"
+            android:layout_centerInParent="true"
             android:layout_marginTop="284dp"
             android:layout_marginEnd="148dp"
-            android:text="Login"
             android:backgroundTint="@color/pink"
+            android:text="Login"
             android:textColor="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_centerInParent="true"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/logoutButton"
             android:layout_width="115dp"
             android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="496dp"
             android:layout_marginEnd="148dp"
             android:backgroundTint="@color/pink"
             android:text="Logout"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_centerHorizontal="true"/>
+            app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

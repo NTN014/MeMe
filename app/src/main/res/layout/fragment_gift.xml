@@ -13,35 +13,12 @@
         android:layout_width="match_parent"
         android:background="@color/pink"
         android:layout_height="40dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:orientation="horizontal"
-            android:paddingRight="5sp">
-            <TextView
-                android:id="@+id/point"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:layout_gravity="right"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="P"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-        </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MaterialCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/giftToolbar">
@@ -49,38 +26,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/white"
-            android:paddingLeft="20sp">
+            android:background="@color/white">
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:gravity="center">
+
                 <ImageView
                     android:id="@+id/dailyImage"
-                    android:layout_width="wrap_content"
+                    android:layout_width="81dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icons8_calendar_64"/>
+                    android:src="@drawable/icons8_calendar_64" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Daily Sign-in"
                     android:layout_below="@id/dailyImage"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:layout_marginTop="0dp"
+                    android:text="Daily Sign-in"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:gravity="center">
+
                 <ImageView
                     android:id="@+id/pointShopImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/icons8_house_64"/>
+                    android:layout_width="71dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_house" />
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Point Shop"
@@ -92,22 +74,27 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:gravity="center">
+
                 <ImageView
                     android:id="@+id/voucherImage"
-                    android:layout_width="wrap_content"
+                    android:layout_width="74dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icons8_voucher_64"/>
+                    android:src="@drawable/icons8_voucher_64" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vouchers"
                     android:layout_below="@id/voucherImage"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:layout_marginTop="0dp"
+                    android:text="Vouchers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+
 
 </RelativeLayout>
