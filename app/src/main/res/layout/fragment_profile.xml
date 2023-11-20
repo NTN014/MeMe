@@ -118,31 +118,38 @@
     </LinearLayout>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="115dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="148dp"
-        android:text="Login"
-        android:backgroundTint="@color/pink"
-        android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="284dp"
+            android:layout_marginEnd="148dp"
+            android:text="Login"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerInParent="true"/>
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="115dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="496dp"
-        android:layout_marginEnd="148dp"
-        android:backgroundTint="@color/pink"
-        android:text="Logout"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="496dp"
+            android:layout_marginEnd="148dp"
+            android:backgroundTint="@color/pink"
+            android:text="Logout"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,9 +61,9 @@ public class MiniGameActivity extends AppCompatActivity {
 
             private void checkWin(SeekBar seekBar, String animal, CheckBox checkBox) {
                 if(seekBar.getProgress() >= seekBar.getMax()) {
-//                    if(checkBox.isChecked()){
-//                        checkBox.setChecked(false);
-//                    }
+                    if(checkBox.isChecked()){
+                        checkBox.setChecked(false);
+                    }
                     ibtnPlay.setVisibility(View.VISIBLE);
                     this.cancel();
                     Toast.makeText(MiniGameActivity.this, animal+ " Win", Toast.LENGTH_SHORT).show();
@@ -81,6 +81,21 @@ public class MiniGameActivity extends AppCompatActivity {
                 }
                 txtPoint.setText(point + "");
                 EnableCheckBox();
+                if(cbDog.isChecked()){
+                    cbDog.setChecked(false);
+                }
+                if(cbCat.isChecked()){
+                    cbCat.setChecked(false);
+                }
+                if(cbChick.isChecked()){
+                    cbChick.setChecked(false);
+                }
+                if(cbOwl.isChecked()){
+                    cbOwl.setChecked(false);
+                }
+                if(cbTiger.isChecked()){
+                    cbTiger.setChecked(false);
+                }
             }
 
             private void EnableCheckBox() {

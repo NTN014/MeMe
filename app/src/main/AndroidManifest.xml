@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MeMe"
         tools:targetApi="34">
         <activity
+            android:name=".activity.FoodShopActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.MiniGameActivity"
             android:exported="false" />
 
