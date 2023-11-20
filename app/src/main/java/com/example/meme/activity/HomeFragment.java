@@ -1,6 +1,8 @@
 package com.example.meme.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,17 +10,22 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.meme.R;
+import com.example.meme.ultil.CustomAlertDialog;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class HomeFragment extends Fragment {
+    int point = 0;
 
+    static TextView pointTV;
     ViewFlipper viewFlipper;
     Animation slideInRight, slideOutRight;
     @Override
@@ -28,15 +35,7 @@ public class HomeFragment extends Fragment {
         viewFlipper = view.findViewById(R.id.homeViewFlipper);
         ImageView shoppingImageView = view.findViewById(R.id.shopping);
         ImageView mapImageView = view.findViewById(R.id.travel);
-        ImageView miniGameImageView = view.findViewById(R.id.miniGame);
-
-        miniGameImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MiniGameActivity.class);
-                startActivity(intent);
-            }
-        });
+        pointTV = view.findViewById(R.id.point);
         shoppingImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +53,10 @@ public class HomeFragment extends Fragment {
             }
         });
         actionViewFlipper();
+
+        dailyReward();
+        updatePoint();
+
         return view;
     }
 
@@ -81,4 +84,40 @@ public class HomeFragment extends Fragment {
         viewFlipper.setInAnimation(slideInRight);
         viewFlipper.setOutAnimation(slideOutRight);
     }
+    public void updatePoint(){
+        SharedPreferences sh = this.getActivity().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sh.edit();
+        int pointText = sh.getInt("point", point);
+        pointTV.setText(String.valueOf(pointText));
+        editor.putString("pointView", pointTV.getText().toString());
+        editor.apply();
+//        Bundle res = new Bundle();
+//        res.putString("Points", pointTV.getText().toString());
+//        getParentFragmentManager().setFragmentResult("Data from home_fragment",res);
+
+    }
+
+    public void dailyReward(){
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        String todayString = day + "" + month + "" + year;
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("PREFS", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        boolean currentDay = sharedPreferences.getBoolean(todayString, false);
+        point = sharedPreferences.getInt("point", 0);
+        if(!currentDay) {
+            point += 100;
+            CustomAlertDialog ccd = new CustomAlertDialog();
+            ccd.showDialog(this.getActivity(), "You received daily rewards!");
+            editor.putBoolean(todayString, true);
+            editor.putInt("point", point);
+            editor.apply();
+        }
+
+
+    }
+
 }
