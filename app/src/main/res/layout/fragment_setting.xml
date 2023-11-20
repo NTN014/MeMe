@@ -5,12 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".activity.SettingFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Coming Soon"
-        android:textSize="50sp"
-        android:textColor="@color/black"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnMoveToAddFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Food to Food Shop"
+            android:textSize="18sp"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <Button
+            android:id="@+id/btnMoveToAddProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnMoveToAddFood"
+            android:layout_marginTop="20dp"
+            android:text="Add Product to Shopping"
+            android:textSize="18sp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+
 
 </FrameLayout>

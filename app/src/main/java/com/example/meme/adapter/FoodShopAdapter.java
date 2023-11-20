@@ -38,8 +38,8 @@ public class FoodShopAdapter extends RecyclerView.Adapter<FoodShopAdapter.ViewHo
         }
         holder.txtFoodName.setText(food.getName());
         holder.txtFoodDescription.setText(food.getDescription());
-        holder.txtFoodPrice.setText(String.valueOf(food.getPrice())); // Convert int to String
-        holder.txtFoodQuantity.setText(String.valueOf(food.getQuantity())); // Convert int to String
+        holder.txtFoodPrice.setText(String.valueOf("gia: " + food.getPrice())); // Convert int to String
+        holder.txtFoodQuantity.setText(String.valueOf("so luong: " + food.getQuantity())); // Convert int to String
 
         Glide.with(holder.itemView.getContext())
                 .load(food.getImage())
