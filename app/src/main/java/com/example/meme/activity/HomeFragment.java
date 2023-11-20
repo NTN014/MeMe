@@ -28,6 +28,15 @@ public class HomeFragment extends Fragment {
         viewFlipper = view.findViewById(R.id.homeViewFlipper);
         ImageView shoppingImageView = view.findViewById(R.id.shopping);
         ImageView mapImageView = view.findViewById(R.id.travel);
+        ImageView miniGameImageView = view.findViewById(R.id.miniGame);
+
+        miniGameImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MiniGameActivity.class);
+                startActivity(intent);
+            }
+        });
         shoppingImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

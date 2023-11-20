@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".activity.MiniGameActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="3000dp"
+        android:layout_height="200dp"
+        android:background="@drawable/logo_animal_racing1"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/finishLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finish_line" />
+
+    <TextView
+        android:id="@+id/txtPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_play"
+        android:contentDescription="playButton"/>
+
+    <CheckBox
+        android:id="@+id/checkboxAnimal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"/>
+    <com.example.meme.yourpackage.VerticalSeekBar
+        android:progressDrawable="@android:color/transparent"
+        android:id="@+id/animal1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:thumb="@drawable/ic_dog"
+        android:layout_above="@+id/checkboxAnimal1"
+        android:layout_marginTop="180dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxAnimal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/checkboxAnimal1"
+        android:layout_toLeftOf="@+id/checkboxAnimal3"/>
+    <com.example.meme.yourpackage.VerticalSeekBar
+        android:progressDrawable="@android:color/transparent"
+        android:id="@+id/animal2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/checkboxAnimal1"
+        android:layout_toLeftOf="@+id/checkboxAnimal3"
+        android:layout_above="@+id/checkboxAnimal2"
+        android:layout_marginTop="180dp"
+        android:thumb="@drawable/ic_chick"/>
+
+    <CheckBox
+        android:id="@+id/checkboxAnimal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+    <com.example.meme.yourpackage.VerticalSeekBar
+        android:progressDrawable="@android:color/transparent"
+        android:id="@+id/animal3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:thumb="@drawable/ic_cat"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/checkboxAnimal3"
+        android:layout_marginTop="180dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxAnimal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/checkboxAnimal3"
+        android:layout_toLeftOf="@+id/checkboxAnimal5"/>
+    <com.example.meme.yourpackage.VerticalSeekBar
+        android:progressDrawable="@android:color/transparent"
+        android:id="@+id/animal4"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:thumb="@drawable/ic_owl"
+        android:layout_toRightOf="@+id/checkboxAnimal3"
+        android:layout_toLeftOf="@+id/checkboxAnimal5"
+        android:layout_above="@+id/checkboxAnimal4"
+        android:layout_marginTop="180dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxAnimal5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"/>
+    <com.example.meme.yourpackage.VerticalSeekBar
+        android:progressDrawable="@android:color/transparent"
+        android:id="@+id/animal5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:thumb="@drawable/ic_tiger"
+        android:layout_above="@+id/checkboxAnimal5"
+        android:layout_marginTop="180dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"/>
+
+
+
+</RelativeLayout>
