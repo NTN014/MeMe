@@ -83,9 +83,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
-
-        LatLng currentLatLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(currentLatLng).title("My location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12)); // Zoom level 15 (adjust as needed)
+        if(currentLocation != null ) {
+            LatLng currentLatLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(currentLatLng).title("My location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17));
+        } else {
+            double defaultLat = 10.7769;
+            double defaultLng = 106.7009;
+            LatLng HCM = new LatLng(defaultLat,defaultLng);
+            mMap.addMarker(new MarkerOptions().position(HCM).title("Ho Chi Minh City"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HCM, 17));
+        }
     }
 }
