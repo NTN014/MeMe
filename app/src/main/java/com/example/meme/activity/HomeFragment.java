@@ -37,6 +37,15 @@ public class HomeFragment extends Fragment {
         ImageView mapImageView = view.findViewById(R.id.travel);
         pointTV = view.findViewById(R.id.point);
         ImageView foodShopImageView = view.findViewById(R.id.foodShop);
+        ImageView miniGameImageView = view.findViewById(R.id.miniGame);
+
+        miniGameImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MiniGameActivity.class);
+                startActivity(intent);
+            }
+        });
 
         foodShopImageView.setOnClickListener(new View.OnClickListener() {
             @Override
