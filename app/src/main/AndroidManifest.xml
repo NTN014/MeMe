@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MeMe"
         tools:targetApi="34">
         <activity
+            android:name=".activity.FoodDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.AddFoodActivity"
             android:exported="false" />
         <activity

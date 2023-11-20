@@ -3,10 +3,12 @@ package com.example.meme.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -18,9 +20,18 @@ import java.util.List;
 public class FoodShopAdapter extends RecyclerView.Adapter<FoodShopAdapter.ViewHolder> {
 
     List<Food> foodList;
+    private OnFoodItemClickListener onFoodItemClickListener;
 
     public FoodShopAdapter(List<Food> foodList) {
         this.foodList = foodList;
+    }
+
+    public interface OnFoodItemClickListener {
+        void onFoodItemClick(int position);
+    }
+
+    public void setOnFoodItemClickListener(OnFoodItemClickListener listener) {
+        this.onFoodItemClickListener = listener;
     }
 
     @NonNull
@@ -44,6 +55,12 @@ public class FoodShopAdapter extends RecyclerView.Adapter<FoodShopAdapter.ViewHo
         Glide.with(holder.itemView.getContext())
                 .load(food.getImage())
                 .into(holder.imgFood);
+
+        holder.itemView.setOnClickListener(view -> {
+            if (onFoodItemClickListener != null) {
+                onFoodItemClickListener.onFoodItemClick(position);
+            }
+        });
     }
 
 
@@ -56,7 +73,6 @@ public class FoodShopAdapter extends RecyclerView.Adapter<FoodShopAdapter.ViewHo
 
         ImageView imgFood;
         TextView txtFoodName, txtFoodPrice, txtFoodQuantity, txtFoodDescription;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

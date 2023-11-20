@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,9 +43,20 @@ public class FoodShopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_shop);
         initUI();
-
+        setupRecyclerView();
         getFoodData();
 
+    }
+
+    private void setupRecyclerView() {
+        // ... Existing code ...
+
+        foodShopAdapter.setOnFoodItemClickListener(position -> {
+            Food selectedFood = foodList.get(position);
+            Intent intent = new Intent(FoodShopActivity.this, FoodDetailsActivity.class);
+            intent.putExtra("FOOD_DETAILS", String.valueOf(selectedFood));
+            startActivity(intent);
+        });
     }
 
     private void getFoodData() {
