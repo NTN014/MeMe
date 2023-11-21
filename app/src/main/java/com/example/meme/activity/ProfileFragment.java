@@ -179,6 +179,9 @@
                     logoutButton.setVisibility(View.VISIBLE); // Show the logout button
                     LinearLayout personLayout = getView().findViewById(R.id.person);
                     personLayout.setVisibility(View.VISIBLE); // Show the person layout
+
+                    TextView edittext = getView().findViewById(R.id.editProfileText);
+                    edittext.setVisibility(View.VISIBLE);
                 } else {
                     Button loginButton = getView().findViewById(R.id.loginButton);
                     loginButton.setVisibility(View.VISIBLE); // Show the login button
@@ -187,6 +190,9 @@
                     logoutButton.setVisibility(View.GONE); // Hide the logout button
                     LinearLayout personLayout = getView().findViewById(R.id.person);
                     personLayout.setVisibility(View.GONE); // Hide the person layout
+
+                    TextView edittext = getView().findViewById(R.id.editProfileText);
+                    edittext.setVisibility(View.GONE);
                 }
             }
         }
