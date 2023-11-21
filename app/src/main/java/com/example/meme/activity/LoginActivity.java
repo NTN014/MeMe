@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isValidPhoneNumber(String phoneNumber) {
-        String regexStr = "^[0-9]{10}$";
+        String regexStr = "^[0-9]{10,11}$";
         return phoneNumber.matches(regexStr);
     }
 

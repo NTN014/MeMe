@@ -19,6 +19,7 @@
     import android.widget.TextView;
 
     import com.bumptech.glide.Glide;
+    import com.example.meme.EditProfileActivity;
     import com.example.meme.R;
 
     public class ProfileFragment extends Fragment {
@@ -28,6 +29,7 @@
         private static final String KEY_DATE_OF_BIRTH = "dateOfBirth";
         private static final int LOGIN_REQUEST_CODE = 123;
         private static final int IMAGE_PICKER_REQUEST_CODE = 456;
+        private static final int EDIT_PROFILE_REQUEST_CODE = 567;
         private TextView emailtv, phone, Uname, dob;
         private String email = "";
         private String name = "";
@@ -50,6 +52,15 @@
             imageView = view.findViewById(R.id.ProfilePicture);
             sharedPreferences = requireContext().getSharedPreferences("ProfileData", Context.MODE_PRIVATE);
             Button logoutButton = view.findViewById(R.id.logoutButton);
+
+            TextView editprofile = view.findViewById(R.id.editProfileText);
+            editprofile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                    startActivityForResult(intent, EDIT_PROFILE_REQUEST_CODE);
+                }
+            });
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -146,7 +157,26 @@
                 Uri selectedImageUri = data.getData();
                 updateProfilePicture(selectedImageUri);
 
+            }else if (requestCode == EDIT_PROFILE_REQUEST_CODE && resultCode == getActivity().RESULT_OK) {
+                if (data != null) {
+                    // Retrieve the updated profile data from the intent
+                    String updatedName = data.getStringExtra("name");
+                    String updatedEmail = data.getStringExtra("email");
+                    String updatedPhone = data.getStringExtra("phone");
+
+                    // Update the profile data in the fragment
+                    name = updatedName;
+                    email = updatedEmail;
+                    phoneNumber = updatedPhone;
+
+                    // Save the updated profile data to SharedPreferences
+                    saveProfileData();
+
+                    // Update the profile views
+                    updateProfileData();
+                }
             }
+
         }
 
         private void updateProfilePicture(Uri selectedImageUri) {
